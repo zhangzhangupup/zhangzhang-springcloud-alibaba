@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/zhangzhang-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-authority-center/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-mvc-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-nacos-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangzhang-nacos-client/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

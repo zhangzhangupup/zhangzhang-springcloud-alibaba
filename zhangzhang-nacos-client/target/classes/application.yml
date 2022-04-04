@@ -1,0 +1,47 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /zhangzhang-nacos-client
+spring:
+  application:
+    name: zhangzhang-nacos-client
+  cloud:
+    nacos:
+      #服务注册与发现
+      discovery:
+        enabled: true #如果不想使用 Nacos 作为注册中心的话赋值为false；
+        server-addr: 127.0.0.1:8848 #nacos server地址
+        #集群配置
+        #server-addr: 127.0.0.1:8848,127.0.0.1:8858,127.0.0.1:8868
+        namespace: 37ed5c88-0303-447a-a90e-89dbdea72207 #命名空间 nacos网页中创建的应用的命名空间
+        #源数据,context-path 是固定的
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      retries: 3
+    consumer:
+      auto-offset-reset: latest
+  sleuth:
+    sampler:
+      # ProbabilityBasedSampler 抽样策略
+      probability: 1.0  # 采样比例, 1.0 表示 100%, 默认是 0.1
+      # RateLimitingSampler 抽样策略, 优先级高，设置了限速采集, spring.sleuth.sampler.probability 属性值无效
+      rate: 100  # 每秒间隔接受的 trace 量
+  zipkin:
+    sender:
+      type: kafka
+    base-url: http://localhost:9411/
+
+
+#暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

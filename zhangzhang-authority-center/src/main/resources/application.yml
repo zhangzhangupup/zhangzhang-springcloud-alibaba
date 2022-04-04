@@ -1,0 +1,73 @@
+server:
+  port: 7070
+  servlet:
+    context-path: /zhangzhang-authority-center
+
+spring:
+  application:
+    name: zhangzhang-authority-center
+  cloud:
+    nacos:
+      #服务注册与发现
+      discovery:
+        enabled: true #如果不想使用 Nacos 作为注册中心的话赋值为false；
+        server-addr: 127.0.0.1:8848 #nacos server地址
+        #集群配置
+        #server-addr: 127.0.0.1:8848,127.0.0.1:8858,127.0.0.1:8868
+        namespace: 37ed5c88-0303-447a-a90e-89dbdea72207 #命名空间 nacos网页中创建的应用的命名空间
+        #源数据
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+  #jpa配置，教程使用。实则使用mybatis
+  #  jpa:
+  #    show-sql: true
+  #    hibernate:
+  #      ddl-auto: none
+  #    properties:
+  #      hibernate.show_sql: true
+  #      hibernate.format_sql: true
+  #    open-in-view: false
+  datasource:
+    # 数据源
+    url: jdbc:mysql://127.0.0.1:3306/zhangzhang_springcloud_commerce?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2b8
+    username: root
+    password: zkc2002318
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+    # 连接池，暂不使用
+#    hikari:
+#      maximum-pool-size: 8
+#      minimum-idle: 4
+#      idle-timeout: 30000
+#      connection-timeout: 30000
+#      max-lifetime: 45000
+#      auto-commit: true
+#      pool-name: ImoocEcommerceHikariCP
+#  kafka:
+#    bootstrap-servers: 127.0.0.1:9092
+#    producer:
+#      retries: 3
+#    consumer:
+#      auto-offset-reset: latest
+#  zipkin:
+#    sender:
+#      type: kafka # 默认是 web
+#    base-url: http://127.0.0.1:9411/
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+#mybatis配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml

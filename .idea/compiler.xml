@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zhangzhang-admin" />
+        <module name="zhangzhang-authority-center" />
+        <module name="zhangzhang-common" />
+        <module name="zhangzhang-mvc-config" />
+        <module name="zhangzhang-gateway" />
+        <module name="zhangzhang-nacos-client" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="zhangzhang-admin" options="-parameters" />
+      <module name="zhangzhang-authority-center" options="-parameters" />
+      <module name="zhangzhang-common" options="-parameters" />
+      <module name="zhangzhang-gateway" options="-parameters" />
+      <module name="zhangzhang-mvc-config" options="-parameters" />
+      <module name="zhangzhang-nacos-client" options="-parameters" />
+    </option>
+  </component>
+</project>

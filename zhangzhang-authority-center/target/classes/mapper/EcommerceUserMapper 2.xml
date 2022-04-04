@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.dao.EcommerceUserMapper">
+    <select id="findByUsername" resultType="com.zhang.pojo.EcommerceUser">
+        select *
+        from t_ecommerce_user
+        where username = #{username}
+    </select>
+    <select id="findByUsernameAndPassword" resultType="com.zhang.pojo.EcommerceUser">
+        select *
+        from t_ecommerce_user
+        where username = #{username}
+    </select>
+    <insert id="save">
+        insert into t_ecommerce_user (username, password, extra_info)
+        values (#{username}, #{password}, #{extraInfo})
+    </insert>
+</mapper>

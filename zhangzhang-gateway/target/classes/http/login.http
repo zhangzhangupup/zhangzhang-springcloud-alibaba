@@ -1,0 +1,17 @@
+### 登录
+POST 127.0.0.1:9090/imooc/e-commerce/login
+Content-Type: application/json
+
+{
+  "username": "张珂晨",
+  "password": "zkc2002318"
+}
+
+###
+POST 127.0.0.1:9090/imooc/e-commerce/register
+Content-Type: application/json
+
+{
+  "username": "zhangkechen",
+  "password": "zkc2002318"
+}
